@@ -1,0 +1,43 @@
+body{
+	background-color:#9C4109;
+}
+
+#dogs {
+margin-top: 20px;
+	padding-top: 10px;
+	padding-bottom: 10px;
+	padding-left: 65px;
+}
+
+.container{
+	background-color:#98a4cb;
+	margin-top: 20px;
+	padding-top: 10px;
+	padding-bottom: 10px;
+	border-radius: 5px;
+	padding-left: 85px;
+}
+
+
+.navContainer {
+    display: flex;
+    justify-content: center;
+}
+.navbar-default {
+    display: flex;
+    font-size: 36px;
+    justify-content: center;
+    background-color:#f7c561;
+    border-color: #f55c47;
+    width: 50%;
+    border-radius: 5px;
+    margin-top: 20px;
+}
+ .nav.navbar-nav.flex-fill li a {
+    color:#060600;!important;
+    text-decoration: none;
+    display:flex;
+    flex-direction: row;
+    justify-content: center;
+
+}

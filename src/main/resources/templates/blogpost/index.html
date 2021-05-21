@@ -1,0 +1,55 @@
+<!DOCTYPE html>
+<html xmlns:th="http://www.thymeleaf.org">
+<head>
+    <meta charset="UTF-8">
+    <title>Blog Site</title>
+
+    <div th:replace="fragments/styling :: head-style" ></div>
+</head>
+<body>
+<div th:replace="fragments/navbar :: navbar" ></div>
+<div class="container">
+    <h1>Blogs About Dogs</h1>
+<div id="dogs">
+    <img src="https://images.unsplash.com/photo-1583511666407-5f06533f2113?ixid=MnwxMjA3fDB8MHxwaG90by1wYWdlfHx8fGVufDB8fHx8&ixlib=rb-1.2.1&auto=format&fit=crop&w=1049&q=80" alt="alternatetext">
+</div>
+
+    <div class="row">
+        <div th:each="blog:${posts}">
+            <div class="col-md-12">
+                <div class="panel panel-default">
+                    <div class="panel-heading">
+                        <h2 th:text="${blog.title}"></h2>
+                    </div>
+                    <div class="panel-body">
+                        <strong><p th:text="${blog.author}"/></strong>
+                        <p th:text="${blog.blogEntry}" />
+                    </div>
+                    <div class="panel-footer">
+                        <!-- Link to Update -->
+                        <!-- Link to Show  -->
+                        <!--  Link to Destroy -->
+                        <form action="#" th:action="@{'/blogposts/{id}'(id=${blog.id})}" th:method="delete"
+                              class="form-horizontal">
+                            <div class="form-group">
+                                <input type="hidden" name="_method" value="delete"/>
+                                <button type="submit" class="btn btn-warning" th:text="Delete">Delete</button>
+                            </div>
+                        </form>
+                        Buttons
+                    </div>
+                </div>
+            </div>
+        </div>
+    </div>
+
+<!--    <a th:href="@{/blogposts/new}"><button class="btn btn-primary">Submit a New Blog Post</button></a>-->
+
+</div>
+
+<div th:replace="fragments/styling:: body-links"></div>
+<!--<script src="webjars/bootstrap/5.0.1/js/bootstrap.min.js"></script>-->
+<!--<script src="webjars/jquery/3.6.0/jquery.min.js"></script>-->
+
+</body>
+</html>
